@@ -5,10 +5,9 @@ unsigned long long int factorial(int n);
 int main()
 {
 
-    int n;
-    unsigned long long fact;
-    std::cout << "Enter a positive integer: ";
-    std::cin >> n;
+    int n = 20;
+    unsigned long long int fact;
+    
 
     fact = factorial(n);
     std::cout << "Factorial of " << n << " = " << fact;
@@ -18,9 +17,14 @@ int main()
 
 unsigned long long int factorial(int n)
 {
-    std::cout << "FInding Factorial of " << n << "\n";
-    if (n > 1)
-        return n * factorial(n - 1);
+    unsigned long long int tmp;
+    std::cout << "Call factorial("<<n<<")"<< "\n";
+    if (n > 1){
+        std::cout <<"finding factorial("<<n<<") = "<<n<<" * factorial("<<n-1<<")"<< "\n";
+        tmp = n * factorial(n - 1);
+        std::cout <<"factorial("<<n<<") = "<<tmp<<"\n";
+        return tmp;
+    }
     else
         return 1;
 }
