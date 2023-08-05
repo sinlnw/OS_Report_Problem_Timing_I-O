@@ -1,30 +1,18 @@
 #include <iostream>
 
-unsigned long long int factorial(int n);
 
-int main()
-{
+int main() {
+    int n = 1000;
+    long long int sum = 0;
 
-    int n = 20;
-    unsigned long long int fact;
-    
-
-    fact = factorial(n);
-    std::cout << "Factorial of " << n << " = " << fact;
-
-    return 0;
-}
-
-unsigned long long int factorial(int n)
-{
-    unsigned long long int tmp;
-    //std::cout << "Call factorial("<<n<<")"<< "\n";
-    if (n > 1){
-        //std::cout <<"finding factorial("<<n<<") = "<<n<<" * factorial("<<n-1<<")"<< "\n";
-        tmp = n * factorial(n - 1);
-        //std::cout <<"factorial("<<n<<") = "<<tmp<<"\n";
-        return tmp;
+   
+    //std::cout<<"sum of natural numbers of 1 to "<<n<<"\n";
+    for (int i = 1; i <= n; ++i) {
+        //std::cout<<"add  "<<i<<" to sum"<<"\n";
+        sum += i;
+        //std::cout<<"sum = "<<sum<<"\n";
     }
-    else
-        return 1;
+
+    std::cout << "Sum = " << sum;
+    return 0;
 }
